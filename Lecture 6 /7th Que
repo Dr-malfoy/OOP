@@ -1,0 +1,57 @@
+using System;
+namespace que_seven
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = Convert.ToInt32(Console.ReadLine());
+            int[] arr = new int[n];
+            Console.WriteLine("Enter the elements of array:");
+            for (int i = 0; i < n; i++)
+            {
+                arr[i] = Convert.ToInt32(Console.ReadLine());
+            }
+            int even = 0;
+            int odd = 0;
+            for (int i = 0;i < n; i++)
+            {
+                if (arr[i]%2==0)
+                {
+                    even += 1;
+                }
+                else
+                {
+                    odd += 1;
+                }
+            }
+            int[] evenarr = new int[even];
+            int[] oddarr = new int[odd];
+            int evenindex = 0;
+            int oddindex = 0;
+            for (int i = 0; i < n ; i++)
+            {
+                if(arr[i]%2==0)
+                {
+                    evenarr[evenindex++] = arr[i];
+                }
+                else
+                {
+                    oddarr[oddindex++] = arr[i];
+                }
+            }
+            Console.WriteLine("Even array");
+            foreach (int i in evenarr)
+            {
+                Console.WriteLine(i);
+            }
+            Console.WriteLine("Odd array");
+            foreach (int i in oddarr)
+            {
+                Console.WriteLine(i);
+            }
+            
+            
+        }
+    }
+}
