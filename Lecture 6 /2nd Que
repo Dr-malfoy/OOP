@@ -1,5 +1,5 @@
 using System;
-namespace que_one
+namespace que_two
 {
     internal class Program
     {
