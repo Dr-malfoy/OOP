@@ -1,0 +1,21 @@
+using System;
+namespace que_one
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int inc = 1;
+            for (int i = 2; i <= 7; i++)
+            {
+                int result = 9 * i * inc;
+                Console.WriteLine(result);
+                if (i<7)
+                {
+                    Console.WriteLine(",");
+                }
+                inc *= -1;
+            }
+        }
+    }
+}
