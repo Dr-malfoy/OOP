@@ -1,0 +1,34 @@
+using System;
+namespace que_three
+{
+    internal class Program
+    {
+        static bool palindrom(int a)
+        {
+            int original = a;
+            int reverse = 0;
+            while (a>0)
+            {
+                int d = a % 10;
+                reverse = reverse * 10 + d;
+                a = a / 10;
+            }
+            return reverse == original ;
+        }
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter a number: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            if (palindrom(n))
+            {
+                Console.WriteLine(n + " is a palindrom");
+            }
+            else
+            {
+                Console.WriteLine(n + "is not a palindrom");
+            }
+
+            
+        }
+    }
+}
