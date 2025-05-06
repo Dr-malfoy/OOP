@@ -1,1 +1,54 @@
-fdff
+using System;
+namespace que_one
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Age: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Is this is weekdays(yes/no): ");
+            string ch = Console.ReadLine();
+            string chh = ch.ToLower();
+            
+            if ( n<13 )
+            {
+                if ( chh == "yes")
+                {
+                    Console.WriteLine("Ticket price is : 100");
+                }
+                else
+                {
+                    Console.WriteLine("Ticket price is : 120");
+                }
+            }
+            else if(13 < n && n <= 64)
+            {
+                if (chh == "yes")
+                {
+                    Console.WriteLine("Ticket price is : 150");
+                }
+                else
+                {
+                    Console.WriteLine("Ticket price is : 180");
+                }
+
+            }
+            else if(n>=65)
+            {
+                if (chh == "yes")
+                {
+                    Console.WriteLine("Ticket price is : 130");
+                }
+                else
+                {
+                    Console.WriteLine("Ticket price is : 150");
+                }
+            }
+            else
+            {
+                Console.WriteLine("You are so old! ");
+            }
+        }
+    }
+}
