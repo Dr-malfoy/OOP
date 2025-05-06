@@ -1,0 +1,30 @@
+using System;
+using System.Net.Cache;
+namespace que_five
+{
+    class person
+    {
+        public string name;
+        public int age;
+        public string gender;
+
+        public void Introduce()
+        {
+            Console.WriteLine("Name is " + name);
+            Console.WriteLine("Age is " + age);
+            Console.WriteLine("Gender is " + gender);
+        }
+    }
+    class program
+    {
+        static void Main(string[] args)
+        {
+            person person1 = new person();
+                person1.name = "Rijom";
+                person1.age = 21;
+                person1.gender = "Male";
+            person1.Introduce();
+            
+        }
+    }
+}
