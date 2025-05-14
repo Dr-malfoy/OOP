@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace _3rd_lab_7
+{
+    internal class Program
+    {
+        static string reverse(string s)
+        {
+            char[] chars = s.ToCharArray();
+            Array.Reverse(chars);
+            return new string(chars);
+        }
+        static void Main(string[] args)
+        {
+            string chh =Console.ReadLine();
+            string ch = reverse(chh);
+            Console.WriteLine(ch);
+        }
+    }
+}
