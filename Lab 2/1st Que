@@ -1,0 +1,19 @@
+using System;
+using System.Globalization;
+
+namespace TEST
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter Circle redias");
+            int r = Convert.ToInt32(Console.ReadLine());
+            double pi = 3.1416;
+            int m = 2;
+            double area = pi * Math.Pow(r, m);
+            Console.WriteLine("Area = " + area);
+        }
+
+    }
+}
