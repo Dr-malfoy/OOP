@@ -1,22 +1,89 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab 8 que 4", "lab 8 que 4\lab 8 que 4.csproj", "{2E3006A8-DE5A-4AD2-9E52-2E5D31F7726A}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{2E3006A8-DE5A-4AD2-9E52-2E5D31F7726A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2E3006A8-DE5A-4AD2-9E52-2E5D31F7726A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2E3006A8-DE5A-4AD2-9E52-2E5D31F7726A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2E3006A8-DE5A-4AD2-9E52-2E5D31F7726A}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-EndGlobal
+using System;
+
+namespace lab_8_que_4
+{
+    class account
+    {
+        private int blance;
+        public account(int Blance)
+        {
+            blance = Blance;
+        }
+        public void deposite (int ammount)
+        {
+            if (ammount <= 0)
+            {
+                Console.WriteLine("Invalide ammount try again");
+            }
+            else
+            {
+                blance += ammount;
+                Console.WriteLine("Deposite successfull!, New Blance is: " + blance);
+                Console.WriteLine("******************");
+            }
+        }
+        public void withdraw(int ammount)
+        {
+            if (ammount <= 0)
+            {
+                Console.WriteLine("Invalide ammount try again");
+            }
+            else
+            {
+                blance -= ammount;
+                Console.WriteLine("Withdraw successfull!, New Blance is: " + blance);
+                Console.WriteLine("******************");
+            }
+        }
+        public void getblance()
+        {
+            Console.WriteLine("Current blance is: " + blance);
+            Console.WriteLine("******************");
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int blance = 0;
+            int m = 0;
+            while ( m <= 3)
+            {
+
+                account newaccount = new account(blance);
+                Console.WriteLine("Depsite(1): ");
+                Console.WriteLine("Withdraw(2): ");
+                Console.WriteLine("Current blance(3): ");
+                Console.WriteLine("******************");
+                int n = Convert.ToInt32(Console.ReadLine());
+                if (n == 1)
+                {
+                    Console.WriteLine("Deposite ammount: ");
+                    int d = Convert.ToInt32(Console.ReadLine());
+                    blance += d;
+                    newaccount.deposite(d);
+                }
+                else if (n == 2)
+                {
+                    Console.WriteLine("Withdraw ammount: ");
+                    int w = Convert.ToInt32(Console.ReadLine());
+                    blance -= w;
+                    newaccount.withdraw(w);
+                }
+                else
+                {
+                    Console.WriteLine("your blance is: ");
+                    newaccount.getblance();
+                }
+                m++;
+                if(m>=3)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine();
+                    Console.WriteLine("Limite is over!");
+                    break;
+                }
+            }
+        }
+    }
+}
