@@ -1,22 +1,73 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab 8 que 2", "lab 8 que 2\lab 8 que 2.csproj", "{FF485A0A-CC17-48E3-BFB4-4CB11CDB53D3}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FF485A0A-CC17-48E3-BFB4-4CB11CDB53D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FF485A0A-CC17-48E3-BFB4-4CB11CDB53D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FF485A0A-CC17-48E3-BFB4-4CB11CDB53D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FF485A0A-CC17-48E3-BFB4-4CB11CDB53D3}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-EndGlobal
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace lab_8_que_2
+{
+    class Employe
+    {
+        private string name;
+        private int id;
+        private int salary;
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                name = value;
+            }
+        }
+        public int ID
+        {
+            get
+            {
+                return id;
+            }
+            set
+            {
+                id = value;
+            }
+        }
+        public int Salary
+        {
+            get
+            {
+                return salary;
+            }
+            set
+            {
+                salary = value;
+            }
+        }
+        public Employe(string a, int b, int c)
+        {
+            name =a;
+            id = b;
+            salary = c;
+        }
+        public void information()
+        {
+            Console.WriteLine("Employe name: "+ name);
+            Console.WriteLine("Employe ID: " + id);
+            Console.WriteLine("Employe Salary: " + salary);
+            Console.WriteLine("********************");
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Employe employe1 = new Employe("Jon", 20054 , 23000);
+            Employe emoloye2 = new Employe("Davide", 20055, 23500);
+            employe1.information();
+            emoloye2 .information();
+
+        }
+    }
+}
