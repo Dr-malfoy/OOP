@@ -1,22 +1,54 @@
-﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lab 8 que 3", "lab 8 que 3\lab 8 que 3.csproj", "{3E6E3D01-7DC7-4224-802B-B1CC0898AA40}"
-EndProject
-Global
-	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3E6E3D01-7DC7-4224-802B-B1CC0898AA40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3E6E3D01-7DC7-4224-802B-B1CC0898AA40}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3E6E3D01-7DC7-4224-802B-B1CC0898AA40}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3E6E3D01-7DC7-4224-802B-B1CC0898AA40}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
-	EndGlobalSection
-EndGlobal
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace lab_8_que_3
+{
+    class Shape
+    {
+        public double hight;
+        public double Width;
+        public Shape(double h, double w)
+        {
+            hight = h;
+            Width = w;
+        }
+    }
+    class Triangle : Shape
+    {
+        public Triangle(double hight, double widht) : base(hight, widht)
+        {
+
+        }
+        public double area()
+        {
+            return 0.5 * hight * Width;
+        }
+    }
+    class Rectengular : Shape
+    {
+        public Rectengular(double hight, double width) : base(hight, width)
+        {
+
+        }
+        public double area()
+        {
+            return hight * Width;
+        }
+
+
+
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Triangle triagle = new Triangle(10, 5);
+            Rectengular rectengular = new Rectengular(10, 5);
+            Console.WriteLine("Triangle area :" + triagle.area());
+            Console.WriteLine("Rectengular area :"+ rectengular.area());
+        }
+    }
+}
